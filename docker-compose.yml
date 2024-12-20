@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .       # Usa el Dockerfile en el directorio actual
+    ports:
+      - "8080:8080"    # Mapea el puerto 8000 del contenedor al puerto 8000 del host
+    volumes:
+      - .:/app         # Asegúrate de montar correctamente el código fuente
+    environment:
+      - PYTHONPATH=/app  # Asegura que el módulo `app` esté en el PYTHONPATH
